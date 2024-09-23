@@ -4,7 +4,6 @@
     font-family: "Space Mono";
     font-style: normal;
     font-weight: 700;
-    /* src: url("../fonts/space-mono-v13-latin-700.woff2") format("woff2"); */
     src: url("./assets/fonts/space-mono-v13-latin-700.woff2") format("woff2");
 }
 
@@ -32,7 +31,7 @@
 
     /* font size for inputs 1.5rem */
 
-    --fs-inputs: 24px;
+    --fs-inputs: 1.5rem;
 
     /* ### Font */
 
@@ -53,6 +52,7 @@
   */
 * {
     margin: 0;
+    padding: 0;
 }
 /*
 	Typographic tweaks!
@@ -110,8 +110,158 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
+    row-gap: 3rem;
+    padding: 4rem 0;
     font-family: var(--ff-regular);
     background-color: var(--clr-light-grayish-cyan);
+}
+
+label,
+.label {
+    color: var(--clr-dark-grayish-cyan);
+    text-transform: capitalize;
+}
+
+input {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--fs-inputs);
+}
+
+input,
+label {
+    border-radius: 0.5rem;
+}
+
+.logo-header {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    background-color: var(---clr-white);
+    border-radius: var(--fs-inputs);
+}
+
+.input-wrapper,
+.tip-options-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* TIP FORM STYLES */
+
+.tip-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+input[name="bill"],
+input[name="number-of-people"],
+input[name="custom-tip"] {
+    background-color: var(--clr-very-light-grayish-cyan);
+    text-align: right;
+    color: var(--clr-very-dark-cyan);
+}
+
+input[name="bill"] {
+    background-image: url("./assets/images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% left 0.75rem;
+}
+
+input[name="number-of-people"] {
+    background-image: url("./assets/images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% left 0.75rem;
+}
+
+/* TIP OPTIONS STYLES */
+
+.tip-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(9.375rem, 50%));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+input[type="radio"] {
+    position: fixed;
+    opacity: 0;
+}
+
+.radio-input-wrapper > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: var(--fs-inputs);
+    color: var(---clr-white);
+    background-color: var(--clr-very-dark-cyan);
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--clr-strong-cyan);
+    color: var(--clr-very-dark-cyan);
+}
+
+/* RESULT TIP STYLES */
+
+.result-tip-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--clr-strong-cyan);
+    background-color: var(--clr-very-dark-cyan);
+    padding: 2rem 1.5rem;
+    border-radius: 0.875rem;
+}
+
+.result-tip-container > div:nth-child(1),
+.result-tip-container > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount,
+.total {
+    font-size: var(--fs-inputs);
+}
+
+.result-tip-container > div:nth-child(1) > div,
+.result-tip-container > div:nth-child(2) > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.result-tip-container > div:nth-child(1) > div > p,
+.result-tip-container > div:nth-child(2) > div > p {
+    color: var(---clr-white);
+    text-transform: capitalize;
+}
+
+.result-tip-container > div:nth-child(1) > div > span,
+.result-tip-container > div:nth-child(2) > div > span {
+    font-size: 0.75rem;
+    color: var(--clr-grayish-cyan);
+    text-transform: capitalize;
+}
+
+.reset {
+    text-transform: uppercase;
+    color: var(--clr-dark-grayish-cyan);
+    border: none;
+    background-color: var(--clr-grayish-cyan);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
 }
 
 /* ATTRIBUTION STYLES */

@@ -15,7 +15,7 @@
         <title>Frontend Mentor | Tip calculator app</title>
     </head>
     <body>
-        <header>
+        <header class="logo-header">
             <img
                 src="./assets/images/logo.svg"
                 alt="splitter text with a line break after spli..."
@@ -26,33 +26,77 @@
         <main>
             <div class="calculator-container">
                 <form class="tip-form">
-                    <label for="bill">bill</label>
-                    <input type="text" name="bill" id="bill" />
-                    <fieldset>
-                        <legend>select tip %</legend>
-                        <label for="">5%</label>
-                        <input type="radio" name="tip-percentage" id="5" />
-                        <label for="">10%</label>
-                        <input type="radio" name="tip-percentage" id="10" />
-                        <label for="">15%</label>
-                        <input type="radio" name="tip-percentage" id="15" />
-                        <label for="">20%</label>
-                        <input type="radio" name="tip-percentage" id="20" />
-                        <label for="">25%</label>
-                        <input type="radio" name="tip-percentage" id="25" />
+                    <div class="input-wrapper">
+                        <label for="bill">bill</label>
+
+                        <input type="text" name="bill" id="bill" />
+                    </div>
+
+                    <div class="tip-options-wrapper">
+                        <p class="label">select tip %</p>
+                        <div class="tip-options">
+                            <div class="radio-input-wrapper">
+                                <input
+                                    type="radio"
+                                    name="tip-percentage"
+                                    id="5"
+                                />
+                                <label for="5">5%</label>
+                            </div>
+
+                            <div class="radio-input-wrapper">
+                                <input
+                                    type="radio"
+                                    name="tip-percentage"
+                                    id="10"
+                                />
+                                <label for="10">10%</label>
+                            </div>
+
+                            <div class="radio-input-wrapper">
+                                <input
+                                    type="radio"
+                                    name="tip-percentage"
+                                    id="15"
+                                />
+                                <label for="15">15%</label>
+                            </div>
+
+                            <div class="radio-input-wrapper">
+                                <input
+                                    type="radio"
+                                    name="tip-percentage"
+                                    id="20"
+                                />
+                                <label for="20">20%</label>
+                            </div>
+
+                            <div class="radio-input-wrapper">
+                                <input
+                                    type="radio"
+                                    name="tip-percentage"
+                                    id="25"
+                                />
+                                <label for="25">25%</label>
+                            </div>
+
+                            <input
+                                type="text"
+                                name="custom-tip"
+                                id="custom-tip"
+                                placeholder="Custom"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="num-of-people"> number of people </label>
                         <input
                             type="text"
-                            name="custom-tip"
-                            id="custom-tip"
-                            placeholder="Custom"
+                            name="number-of-people"
+                            id="num-of-people"
                         />
-                    </fieldset>
-                    <label for="num-of-people"> number of people </label>
-                    <input
-                        type="text"
-                        name="number-of-people"
-                        id="num-of-people"
-                    />
+                    </div>
                 </form>
 
                 <div class="result-tip-container">
@@ -61,7 +105,7 @@
                             <p>tip amount</p>
                             <span>/ person</span>
                         </div>
-                        <span id="">$33.33</span>
+                        <span class="amount" id="tip-amount-per-person">$33.33</span>
                     </div>
 
                     <div>
@@ -69,21 +113,22 @@
                             <p>total</p>
                             <span>/ person</span>
                         </div>
-                        <span id="">$33.33</span>
+                        <span class="total" id="tip-total">$33.33</span>
                     </div>
 
-                    <button id="reset-btn">reset</button>
+                    <button class="reset" id="reset-btn">reset</button>
                 </div>
             </div>
         </main>
 
         <footer class="attribution">
             Challenge by
-            <a
-                href="https://www.frontendmentor.io?ref=challenge"
-                target="_blank"
+            <a href="https://www.frontendmentor.io/challenges" target="_blank"
                 >Frontend Mentor</a
-            >. Coded by <a href="#">Your Name Here</a>.
+            >. Coded by
+            <a href="https://www.frontendmentor.io/profile/HeberRios"
+                >Heber Rios</a
+            >.
         </footer>
     </body>
 </html>
