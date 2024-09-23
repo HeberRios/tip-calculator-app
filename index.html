@@ -15,8 +15,67 @@
         <title>Frontend Mentor | Tip calculator app</title>
     </head>
     <body>
-        <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount
-        / person Total / person Reset -->
+        <header>
+            <img
+                src="./assets/images/logo.svg"
+                alt="splitter text with a line break after spli..."
+                class="header-logo"
+            />
+        </header>
+
+        <main>
+            <div class="calculator-container">
+                <form class="tip-form">
+                    <label for="bill">bill</label>
+                    <input type="text" name="bill" id="bill" />
+                    <fieldset>
+                        <legend>select tip %</legend>
+                        <label for="">5%</label>
+                        <input type="radio" name="tip-percentage" id="5" />
+                        <label for="">10%</label>
+                        <input type="radio" name="tip-percentage" id="10" />
+                        <label for="">15%</label>
+                        <input type="radio" name="tip-percentage" id="15" />
+                        <label for="">20%</label>
+                        <input type="radio" name="tip-percentage" id="20" />
+                        <label for="">25%</label>
+                        <input type="radio" name="tip-percentage" id="25" />
+                        <input
+                            type="text"
+                            name="custom-tip"
+                            id="custom-tip"
+                            placeholder="Custom"
+                        />
+                    </fieldset>
+                    <label for="num-of-people"> number of people </label>
+                    <input
+                        type="text"
+                        name="number-of-people"
+                        id="num-of-people"
+                    />
+                </form>
+
+                <div class="result-tip-container">
+                    <div>
+                        <div>
+                            <p>tip amount</p>
+                            <span>/ person</span>
+                        </div>
+                        <span id="">$33.33</span>
+                    </div>
+
+                    <div>
+                        <div>
+                            <p>total</p>
+                            <span>/ person</span>
+                        </div>
+                        <span id="">$33.33</span>
+                    </div>
+
+                    <button id="reset-btn">reset</button>
+                </div>
+            </div>
+        </main>
 
         <footer class="attribution">
             Challenge by
