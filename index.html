@@ -29,7 +29,12 @@
                     <div class="input-wrapper">
                         <label for="bill">bill</label>
 
-                        <input type="text" name="bill" id="bill" />
+                        <input
+                            type="text"
+                            name="bill"
+                            id="bill"
+                            placeholder="0"
+                        />
                     </div>
 
                     <div class="tip-options-wrapper">
@@ -95,25 +100,30 @@
                             type="text"
                             name="number-of-people"
                             id="num-of-people"
+                            placeholder="0"
                         />
                     </div>
                 </form>
 
                 <div class="result-tip-container">
-                    <div>
+                    <div class="results-wrapper">
                         <div>
-                            <p>tip amount</p>
-                            <span>/ person</span>
+                            <div class="total-wrapper">
+                                <p>tip amount</p>
+                                <span>/ person</span>
+                            </div>
+                            <span class="amount" id="tip-amount-per-person"
+                                >$33.33</span
+                            >
                         </div>
-                        <span class="amount" id="tip-amount-per-person">$33.33</span>
-                    </div>
 
-                    <div>
                         <div>
-                            <p>total</p>
-                            <span>/ person</span>
+                            <div class="total-wrapper">
+                                <p>total</p>
+                                <span>/ person</span>
+                            </div>
+                            <span class="total" id="tip-total">$33.33</span>
                         </div>
-                        <span class="total" id="tip-total">$33.33</span>
                     </div>
 
                     <button class="reset" id="reset-btn">reset</button>
