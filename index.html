@@ -96,8 +96,17 @@
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="num-of-people"> number of people </label>
+                        <div class="error-wrapper">
+                            <label for="num-of-people">
+                                number of people
+                            </label>
+                            <span class="invalid-span" aria-live="polite"
+                                >Can't be zero</span
+                            >
+                        </div>
+
                         <input
+                            class=""
                             type="text"
                             name="number-of-people"
                             id="num-of-people"
@@ -113,7 +122,7 @@
                                 <p>tip amount</p>
                                 <span>/ person</span>
                             </div>
-                            <span class="amount" id="tip-per-person">$33.33</span>
+                            <span class="amount" id="tip-per-person">$0.0</span>
                         </div>
 
                         <div>
@@ -121,7 +130,9 @@
                                 <p>total</p>
                                 <span>/ person</span>
                             </div>
-                            <span class="total" id="total-per-person">$33.33</span>
+                            <span class="total" id="total-per-person"
+                                >$0.0</span
+                            >
                         </div>
                     </div>
 

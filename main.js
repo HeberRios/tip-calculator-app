@@ -52,65 +52,80 @@ function calculateTip() {
 
         // if a radio button was pressed, then :
         if (tipPercentage !== 0) {
-            if (peopleInput.value === "") {
-                // no people number entered, assuming just 1 person
-                tipPerPerson = +billInput.value * (tipPercentage / 100);
-                totalPerPerson = +billInput.value + tipPerPerson;
+            if (!isNaN(billInput.value)) {
+                if (peopleInput.value === "") {
+                    // no people number entered, assuming just 1 person
+                    tipPerPerson = +billInput.value * (tipPercentage / 100);
+                    totalPerPerson = +billInput.value + tipPerPerson;
 
-                tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
-                total.textContent = `$${totalPerPerson.toFixed(2)}`;
-            } else if (+peopleInput.value >= 1) {
-                tipPerPerson =
-                    (+billInput.value * (tipPercentage / 100)) /
-                    +peopleInput.value;
+                    tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
+                    total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                } else if (+peopleInput.value >= 1) {
+                    tipPerPerson =
+                        (+billInput.value * (tipPercentage / 100)) /
+                        +peopleInput.value;
 
-                totalPerPerson =
-                    +billInput.value / +peopleInput.value + tipPerPerson;
+                    totalPerPerson =
+                        +billInput.value / +peopleInput.value + tipPerPerson;
 
-                tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
-                total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                    tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
+                    total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                }
+            } else {
+                tipTotal.textContent = "$0.0";
+                total.textContent = "$0.0";
             }
         }
         // if no radio btn was pressed but the custom tip was entered, then :
         else if (customTipInput.value !== "") {
-            if (peopleInput.value === "") {
-                // no people number was entered, assuming just 1 person
-                tipPerPerson = +billInput.value * (+customTipInput.value / 100);
+            if (!isNaN(billInput.value)) {
+                if (peopleInput.value === "") {
+                    // no people number was entered, assuming just 1 person
+                    tipPerPerson =
+                        +billInput.value * (+customTipInput.value / 100);
 
-                totalPerPerson = +billInput.value + tipPerPerson;
+                    totalPerPerson = +billInput.value + tipPerPerson;
 
-                tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
-                total.textContent = `$${totalPerPerson.toFixed(2)}`;
-            } else if (+peopleInput.value >= 1) {
-                tipPerPerson =
-                    (+billInput.value * (+customTipInput.value / 100)) /
-                    +peopleInput.value;
+                    tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
+                    total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                } else if (+peopleInput.value >= 1) {
+                    tipPerPerson =
+                        (+billInput.value * (+customTipInput.value / 100)) /
+                        +peopleInput.value;
 
-                totalPerPerson =
-                    +billInput.value / +peopleInput.value + tipPerPerson;
+                    totalPerPerson =
+                        +billInput.value / +peopleInput.value + tipPerPerson;
 
-                tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
-                total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                    tipTotal.textContent = `$${tipPerPerson.toFixed(2)}`;
+                    total.textContent = `$${totalPerPerson.toFixed(2)}`;
+                }
+            } else {
+                tipTotal.textContent = "$0.0";
+                total.textContent = "$0.0";
             }
         }
         // if neither a radio btn or a custom was received, then:
         else {
-            if (peopleInput.value === "") {
-                tipTotal.textContent = "$0.00";
-                total.textContent = `$${billInput.value}`;
-            } else if (+peopleInput.value >= 1) {
-                totalPerPerson = +billInput.value / +peopleInput.value;
+            if (!isNaN(billInput.value)) {
+                if (peopleInput.value === "") {
+                    tipTotal.textContent = "$0.0";
+                    total.textContent = `$${billInput.value}`;
+                } else if (+peopleInput.value >= 1) {
+                    totalPerPerson = +billInput.value / +peopleInput.value;
 
-                tipTotal.textContent = "$0.00";
-                total.textContent = `$${totalPerPerson}`;
+                    tipTotal.textContent = "$0.0";
+                    total.textContent = `$${totalPerPerson}`;
+                }
+            } else {
+                tipTotal.textContent = "$0.0";
+                total.textContent = "$0.0";
             }
         }
     }
     // if the bill input was not entered, then:
     else {
-        tipTotal.textContent = "$0.00";
-        total.textContent = "$0.00";
-        return;
+        tipTotal.textContent = "$0.0";
+        total.textContent = "$0.0";
     }
 }
 
