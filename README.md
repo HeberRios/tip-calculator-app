@@ -4,19 +4,19 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ## Table of contents
 
-- [Frontend Mentor - Tip calculator app solution](#frontend-mentor---tip-calculator-app-solution)
-	- [Table of contents](#table-of-contents)
-	- [Overview](#overview)
-		- [The challenge](#the-challenge)
-		- [Screenshot](#screenshot)
-		- [Links](#links)
-	- [My process](#my-process)
-		- [Built with](#built-with)
-		- [What I learned](#what-i-learned)
-		- [Continued development](#continued-development)
-		- [Useful resources](#useful-resources)
-	- [Author](#author)
-	- [Acknowledgments](#acknowledgments)
+-   [Frontend Mentor - Tip calculator app solution](#frontend-mentor---tip-calculator-app-solution)
+    -   [Table of contents](#table-of-contents)
+    -   [Overview](#overview)
+        -   [The challenge](#the-challenge)
+        -   [Screenshot](#screenshot)
+        -   [Links](#links)
+    -   [My process](#my-process)
+        -   [Built with](#built-with)
+        -   [What I learned](#what-i-learned)
+        -   [Continued development](#continued-development)
+        -   [Useful resources](#useful-resources)
+    -   [Author](#author)
+    -   [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
--   [Solution URL]()
--   [Live Site URL]()
+-   [Solution URL](https://www.frontendmentor.io/solutions/tip-calculator-app-PLGxeiRuX8)
+-   [Live Site URL](https://heberrios.github.io/tip-calculator-app/)
 
 ## My process
 
