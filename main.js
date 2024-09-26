@@ -108,9 +108,8 @@ function calculateTip() {
     let tipPerPerson = 0;
     let totalPerPerson = 0;
 
-    //    Check if any radio btn is pressed
-
     if (billInput.value !== "") {
+        //    Check if any radio btn is pressed
         radioInputs.forEach(function (radioBtn) {
             if (radioBtn.checked) {
                 tipPercentage = +radioBtn.id;

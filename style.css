@@ -19,6 +19,7 @@
     /* ### Neutral */
 
     --clr-very-dark-cyan: hsl(183, 100%, 15%);
+    --clr-very-dark-cyan-box-shadow: hsla(183, 100%, 15%, 0.231);
     --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
     --clr-grayish-cyan: hsl(184, 14%, 56%);
     --clr-light-grayish-cyan: hsl(185, 41%, 84%);
@@ -28,8 +29,6 @@
     /* ## Typography */
 
     /* ### Body */
-
-    /* font size for inputs 1.5rem */
 
     --fs-inputs: 1.5rem;
 
@@ -128,7 +127,7 @@ label,
 input {
     border: none;
     padding: 0.5rem 0.75rem;
-    font-size: clamp(1rem, 2.5dvw, var(--fs-inputs));
+    font-size: clamp(1.25rem, 2.5dvw, var(--fs-inputs));
 }
 
 input,
@@ -171,6 +170,7 @@ input[name="custom-tip"] {
     background-color: var(--clr-very-light-grayish-cyan);
     text-align: right;
     color: var(--clr-very-dark-cyan);
+    box-shadow: 0 0 0.125rem 0 var(--clr-very-dark-cyan-box-shadow);
 }
 
 input[name="bill"] {
@@ -207,6 +207,7 @@ input[type="radio"] {
     font-size: clamp(1rem, 2.5dvw, var(--fs-inputs));
     color: var(---clr-white);
     background-color: var(--clr-very-dark-cyan);
+    transition: all 0.4s;
 }
 
 input[type="radio"]:checked + label {
@@ -252,7 +253,7 @@ input[type="radio"]:checked + label {
 
 .amount,
 .total {
-    font-size: var(--fs-inputs);
+    font-size: clamp(var(--fs-inputs), 4.25dvw, 3rem);
 }
 
 .reset {
@@ -262,6 +263,7 @@ input[type="radio"]:checked + label {
     background-color: var(--clr-grayish-cyan);
     border-radius: 0.5rem;
     padding: 0.5rem 0;
+    transition: all 0.4s;
 }
 
 .reset.active {
