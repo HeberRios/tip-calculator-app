@@ -7,8 +7,52 @@ const radioInputs = document.querySelectorAll("input[type='radio']");
 const tipTotal = document.querySelector("#tip-per-person");
 const total = document.querySelector("#total-per-person");
 const resetBtn = document.querySelector("#reset-btn");
+const invalidSpan = document.querySelector(".invalid-span");
+
+const numbersRegex = /^\d{1,}$/;
 
 // functions
+
+function calculationNotExecuted() {
+    tipTotal.textContent = "$0.0";
+    total.textContent = "$0.0";
+}
+
+function numberOfPeopleValidation() {
+    if (peopleInput.value === "") {
+        invalidSpan.classList.remove("active");
+        peopleInput.classList.remove("invalid");
+
+        calculateTip();
+    } else if (+peopleInput.value === 0) {
+        invalidSpan.textContent = "Can't be zero";
+        invalidSpan.classList.add("active");
+        peopleInput.classList.add("invalid");
+
+        resetBtnActiveToggle();
+        calculationNotExecuted();
+    } else if (numbersRegex.test(peopleInput.value)) {
+        invalidSpan.classList.remove("active");
+        peopleInput.classList.remove("invalid");
+
+        calculateTip();
+    } else {
+        invalidSpan.textContent = "Invalid value";
+        invalidSpan.classList.add("active");
+        peopleInput.classList.add("invalid");
+
+        resetBtnActiveToggle();
+        calculationNotExecuted();
+    }
+}
+
+function resetBtnActiveToggle() {
+    if (checkForNoEmptyInputs()) {
+        resetBtn.classList.add("active");
+    } else {
+        resetBtn.classList.remove("active");
+    }
+}
 
 function checkForNoEmptyRadioBtns() {
     let checkedRadioBtn = false;
@@ -51,11 +95,12 @@ function resetPeople() {
     peopleInput.value = "";
 }
 
-function resetValues() {
+function resetCalculator() {
     resetBill();
     resetRadioButtons();
     resetCustomTip();
     resetPeople();
+    calculationNotExecuted();
 }
 
 function calculateTip() {
@@ -96,8 +141,7 @@ function calculateTip() {
                     total.textContent = `$${totalPerPerson.toFixed(2)}`;
                 }
             } else {
-                tipTotal.textContent = "$0.0";
-                total.textContent = "$0.0";
+                calculationNotExecuted();
             }
         }
         // if no radio btn was pressed but the custom tip was entered, then :
@@ -124,8 +168,7 @@ function calculateTip() {
                     total.textContent = `$${totalPerPerson.toFixed(2)}`;
                 }
             } else {
-                tipTotal.textContent = "$0.0";
-                total.textContent = "$0.0";
+                calculationNotExecuted();
             }
         }
         // if neither a radio btn or a custom  was received, then:
@@ -141,22 +184,16 @@ function calculateTip() {
                     total.textContent = `$${totalPerPerson.toFixed(2)}`;
                 }
             } else {
-                tipTotal.textContent = "$0.0";
-                total.textContent = "$0.0";
+                calculationNotExecuted();
             }
         }
     }
     // if the bill input was not entered, then:
     else {
-        tipTotal.textContent = "$0.0";
-        total.textContent = "$0.0";
+        calculationNotExecuted();
     }
 
-    if (checkForNoEmptyInputs()) {
-        resetBtn.classList.add("active");
-    } else {
-        resetBtn.classList.remove("active");
-    }
+    resetBtnActiveToggle();
 }
 
 // event listeners
@@ -178,16 +215,18 @@ customTipInput.addEventListener("input", function () {
 });
 
 peopleInput.addEventListener("input", function () {
-    calculateTip();
+    numberOfPeopleValidation();
 });
 
 resetBtn.addEventListener("click", function () {
     if (resetBtn.classList.contains("active")) {
-        resetValues();
+        resetCalculator();
+        invalidSpan.classList.remove("active");
+        peopleInput.classList.remove("invalid");
         resetBtn.classList.remove("active");
     } else {
         return;
     }
 });
 
-resetValues();
+resetCalculator();
